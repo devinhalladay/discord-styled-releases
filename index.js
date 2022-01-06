@@ -30,41 +30,39 @@ async function run() {
 
     const components = [
       {
-        "type": 1,
-        "components": [
+        type: 1,
+        components: [
           {
-            "style": 5,
-            "label": `Check it out!`,
-            "url": `https://index-space.org`,
-            "disabled": false,
-            "emoji": {
-              "id": null,
-              "name": `👋`
+            style: 5,
+            label: 'Check it out!',
+            url: 'https://index-space.org',
+            disabled: false,
+            emoji: {
+              id: null,
+              name: '👋'
             },
-            "type": 2
+            type: 2
           }
         ]
       }
     ]
 
     const embedMsg = {
-      content: 'Hello! A new release of the Index product has been published. Let us know what you think or if you have any questions ❤️',
-      type: "rich",
       color: 0x2cad60,
       title: `Release ${content.version}`,
       description: content.body,
       url: 'https://index-space.org',
-      "author": {
-        "name": `@theflowingsky`,
-        "url": `https://discordapp.com/users/714561137798021213`,
-        "icon_url": `https://devinhalladay.com/assets/images/bubble-rainbow.png`
+      author: {
+        name: '@theflowingsky',
+        url: 'https://discordapp.com/users/714561137798021213',
+        icon_url: 'https://devinhalladay.com/assets/images/bubble-rainbow.png'
       },
-      "footer": {
-        "text": `INDEX RELEASE NOTES`
+      footer: {
+        text: 'INDEX RELEASE NOTES'
       }
     }
 
-    const body = { components: components, embeds: [embedMsg] }
+    const body = { components: components, embeds: [embedMsg], content: 'Hello! A new release of the Index product has been published. Let us know what you think or if you have any questions ❤️' }
 
     const url = `https://discord.com/api/webhooks/${core.getInput('webhook_id')}/${core.getInput('webhook_token')}?wait=true`
 
