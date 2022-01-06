@@ -8716,24 +8716,22 @@ async function run() {
 
     const content = await getContext()
 
-    const components = [
-      {
-        type: 1,
-        components: [
-          {
-            style: 5,
-            label: 'Check it out!',
-            url: 'https://index-space.org',
-            disabled: false,
-            emoji: {
-              id: null,
-              name: '👋'
-            },
-            type: 2
+    const component = {
+      type: 1,
+      components: [
+        {
+          style: 1,
+          type: 2,
+          label: 'Check it out!',
+          url: 'https://index-space.org',
+          disabled: false,
+          emoji: {
+            id: null,
+            name: '👋'
           }
-        ]
-      }
-    ]
+        }
+      ]
+    }
 
     const embedMsg = {
       color: 0x2cad60,
@@ -8750,7 +8748,7 @@ async function run() {
       }
     }
 
-    const body = { components: components, embeds: [embedMsg], content: 'Hello! A new release of the Index product has been published. Let us know what you think or if you have any questions ❤️' }
+    const body = { components: [component], embeds: [embedMsg], content: 'Hello! A new release of the Index product has been published. Let us know what you think or if you have any questions ❤️' }
 
     const url = `https://discord.com/api/webhooks/${core.getInput('webhook_id')}/${core.getInput('webhook_token')}?wait=true`
 
